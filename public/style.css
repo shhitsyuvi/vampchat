@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+:root {
+    --red: #e53935;
+    --red-light: #ef5350;
+    --bg-black: #000;
+    --glass: rgba(255, 255, 255, 0.05);
+    --gray: #1a1a1a;
+    --gray-light: #999;
+}
+
+body {
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    background-color: var(--bg-black);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    min-height: 100vh;
+}
+
+.panel {
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 40px;
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+input,
+button {
+    padding: 14px;
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    background-color: var(--gray);
+    color: white;
+    outline: none;
+}
+
+button {
+    background-color: var(--red);
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--red-light);
+}
+
+.hidden {
+    display: none !important;
+}
+
+#messages {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 50vh;
+    scrollbar-width: none;
+}
+
+#messages::-webkit-scrollbar {
+    display: none;
+}
+
+#messages li {
+    background: var(--gray);
+    margin: 8px 0;
+    padding: 14px;
+    border-radius: 30px;
+    text-align: left;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.username {
+    font-weight: 500;
+    color: var(--red);
+}
+
+.time {
+    font-size: 0.8rem;
+    color: var(--gray-light);
+    float: right;
+}
+
+.system-msg {
+    font-style: italic;
+    color: var(--red-light);
+}
+
+.app-name {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--red);
+    text-transform: lowercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.app-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 480px) {
+
+    input,
+    button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    .app-name {
+        font-size: 1.25rem;
+    }
+
+    #messages {
+        max-height: 60vh;
+    }
+
+    .app-icon {
+        width: 18px;
+        height: 18px;
+    }
+}
