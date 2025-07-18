@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vampchat</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="name-prompt" class="panel">
+        <input id="username" placeholder="your name" />
+        <button id="submit-name">enter</button>
+    </div>
+
+    <div id="chat" class="panel hidden">
+        <div class="app-name">
+            <img src="https://upload.wikimedia.org/wikipedia/en/6/6c/Playboi_Carti_-_Whole_Lotta_Red.png" alt="icon"
+                class="app-icon" />
+            vampchat
+        </div>
+        <ul id="messages"></ul>
+        <form id="form" action="">
+            <input id="input" autocomplete="off" placeholder="message" />
+            <button>send</button>
+        </form>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
